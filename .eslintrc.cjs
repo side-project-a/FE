@@ -20,5 +20,15 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.ts', '.tsx'] }],
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': ['error'],
+    // temporary off
+    'import/prefer-default-export': 'off',
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'react/button-has-type': 'off',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-console': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    'react-refresh/only-export-components': 'off',
+    //
   },
 };

@@ -6,10 +6,24 @@ export default function usePlacesList() {
   const [selectedPlaces, setSelectedPlaces] = useState<{
     [key: string]: boolean;
   }>({});
+  const [selectedCategory, setSelectedCategory] = useState<
+    'restaurants' | 'attractions' | 'cafes' | 'accomodations' | null
+  >(null);
+  const [filteredPlaces, setFilteredPlaces] = useState<Place[]>(allPlaces);
 
   useEffect(() => {
     setAllPlace(dummies);
   }, []);
+
+  useEffect(() => {
+    if (selectedCategory === null) {
+      setFilteredPlaces(allPlaces);
+    } else {
+      setFilteredPlaces(
+        allPlaces.filter(place => place.categories === selectedCategory),
+      );
+    }
+  }, [selectedCategory, allPlaces]);
 
   const handleListClick = (place: Place) => {
     setSelectedPlaces(prev => ({
@@ -26,10 +40,19 @@ export default function usePlacesList() {
     });
   };
 
+  const handleCategorySelect = (
+    category: 'restaurants' | 'attractions' | 'cafes' | 'accomodations' | null,
+  ) => {
+    setSelectedCategory(category);
+  };
+
   return {
+    allPlaces,
     selectedPlaces,
+    selectedCategory,
+    filteredPlaces,
     handleListClick,
     handleRemovePlace,
-    allPlaces,
+    handleCategorySelect,
   };
 }

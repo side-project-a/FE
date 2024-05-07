@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { dummies, Place } from '@widgets/PlacesList/PlacesData';
+import { dummies, Place } from '@wigets/PlacesList/PlacesData';
 
 export default function usePlacesList() {
   const [allPlaces, setAllPlace] = useState<Place[]>([]);

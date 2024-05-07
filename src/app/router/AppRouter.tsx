@@ -4,15 +4,10 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import { Home, Planner } from '@/pages';
+import { Home } from '@/pages';
 
 const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path="/" element={<Home />} />
-      <Route path="/planner" element={<Planner />} />
-    </>,
-  ),
+  createRoutesFromElements(<Route path="/" element={<Home />} />),
 );
 
 export function AppRouter() {

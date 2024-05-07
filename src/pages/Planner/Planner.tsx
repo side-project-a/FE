@@ -1,4 +1,4 @@
-import { PlacesList, usePlacesList } from '@/widgets';
+import { PlacesList, usePlacesList } from '@/wigets';
 
 export default function Planner() {
   const {

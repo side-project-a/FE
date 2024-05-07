@@ -1,1 +1,4 @@
-export { default as PlacesList } from '@wigets/PlacesList/PlacesList';
+import PlacesList from './ui';
+import usePlacesList from './model';
+
+export default { PlacesList, usePlacesList };

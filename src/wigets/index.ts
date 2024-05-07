@@ -1,1 +1,3 @@
-export { PlacesList } from '@wigets/PlacesList';
+import PlacesListModule from './PlacesList';
+
+export const { PlacesList, usePlacesList } = PlacesListModule;
